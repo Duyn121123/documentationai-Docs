@@ -1,0 +1,138 @@
+---
+title: Configuring Your Documentation Space
+description: Learn how to customize and configure your documentation space to fit your project's needs.
+---
+
+## Overview
+
+Customize your Duyên Phan Documentation space to match your project's branding and workflow. Adjust settings for permissions, themes, integrations, and security directly from the dashboard. These configurations ensure your documentation remains organized, secure, and tailored to your team.
+
+<Callout kind="tip">
+  Start with project settings before customizing themes to avoid conflicts.
+</Callout>
+
+## Project Settings and Permissions
+
+Access project settings from the sidebar menu. Here, you define team roles and access levels.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Click the gear icon in the navigation sidebar.
+  </Step>
+  <Step title="Update Permissions" icon="users">
+    Select the `Permissions` tab and assign roles.
+  </Step>
+  <Step title="Save Changes" icon="save">
+    Review and apply your configuration.
+  </Step>
+</Steps>
+
+Use this table to understand default roles:
+
+| Role       | Read Access | Write Access | Admin Access |
+|------------|-------------|--------------|--------------|
+| Viewer     | Yes         | No           | No           |
+| Editor     | Yes         | Yes          | No           |
+| Owner      | Yes         | Yes          | Yes          |
+
+## Theme and Branding Customization
+
+Tailor your documentation's appearance using the theme editor. Set your brand color to `#3B82F6` and choose light or dark modes.
+
+<Tabs>
+  <Tab title="YAML Config" icon="file">
+    Edit your `theme.yaml` file:
+
+    ```yaml
+    brand:
+      primary: "#3B82F6"
+      logo: "/assets/logo.svg"
+    
+    theme:
+      mode: "dark"
+      font: "Inter"
+    ```
+  </Tab>
+  <Tab title="JSON Config" icon="code">
+    Use JSON for programmatic setups:
+
+    ```json
+    {
+      "brand": {
+        "primary": "#3B82F6",
+        "logo": "/assets/logo.svg"
+      },
+      "theme": {
+        "mode": "light",
+        "font": "Inter"
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Preview changes live in the theme editor before publishing.
+</Callout>
+
+## Integrations with External Tools
+
+Connect your documentation to tools like GitHub, Slack, and analytics providers.
+
+<Columns cols={3}>
+  <Card title="GitHub Sync" icon="github" href="/integrations/github">
+    Automatically sync repositories and pull requests.
+  </Card>
+  <Card title="Slack Notifications" icon="message-circle" href="/integrations/slack">
+    Get real-time updates on edits and deployments.
+  </Card>
+  <Card title="Google Analytics" icon="bar-chart-3" href="/integrations/analytics">
+    Track visitor metrics and engagement.
+  </Card>
+</Columns>
+
+Configure GitHub with this example:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const githubConfig = {
+    repo: "your-org/your-docs",
+    token: "YOUR_GITHUB_TOKEN",
+    branch: "main"
+  };
+  ```
+  ```python
+  github_config = {
+      "repo": "your-org/your-docs",
+      "token": "YOUR_GITHUB_TOKEN",
+      "branch": "main"
+  }
+  ```
+</CodeGroup>
+
+## Backup and Security Options
+
+Enable automated backups and secure your space with encryption.
+
+<Expandable title="Advanced Security Settings" default-open="false">
+  Configure encryption keys and two-factor authentication:
+
+  ```bash
+  duyen-docs security enable \
+    --encryption-key YOUR_ENCRYPTION_KEY \
+    --mfa-required true
+  ```
+
+  Backups run daily to `s3://your-backup-bucket/docs-backups/`.
+</Expandable>
+
+<ExpandableGroup>
+  <Expandable title="Backup Schedule">
+    Customize intervals: daily, weekly, or on-demand.
+  </Expandable>
+  <Expandable title="Access Logs">
+    Review audit logs for all changes.
+  </Expandable>
+</ExpandableGroup>
+
+These steps ensure your Duyên Phan Documentation space scales securely with your project. Test configurations in a staging environment first.

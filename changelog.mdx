@@ -1,0 +1,139 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Duyên Phan Documentation.
+---
+
+## Recent Updates
+
+Stay current with the latest releases. You review changes here to understand new capabilities and required actions for your documentation site.
+
+<Update label="2024-10-20" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom brand colors. Set your `{brandColor}` in the config to match `#3B82F6`.
+- Introduced Tabs component for platform-specific instructions, enhancing multi-environment docs.
+
+## Improvements
+
+- Optimized Mermaid diagram rendering for faster load times.
+- Enhanced search indexing to cover nested Expandable content.
+
+</Update>
+
+<Update label="2024-10-10" description="v1.2.1" tags={["bugfix", "security"]}>
+
+## Bug Fixes
+
+- Fixed parsing errors with nested code blocks using 4 backticks.
+- Resolved JSX attribute validation for arrays like `tags={["feature"]}`.
+
+## Security
+
+- Patched potential vulnerabilities in external iframe embeds.
+
+</Update>
+
+<Update label="2024-09-30" description="v1.2.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched Update component for streamlined changelog entries.
+- Added ParamField and ResponseField for API documentation pages.
+
+## Breaking Changes
+
+- Updated frontmatter parsing to reject blank lines, ensuring zero YAML errors.
+
+</Update>
+
+## Upgrade Instructions
+
+You upgrade Duyên Phan Documentation by following these steps. Each release includes migration guides within the notes above.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Save your current `docs/` directory and config files.
+
+    <Callout kind="tip">
+      Use Git to create a branch: `git checkout -b upgrade-v1.3.0`.
+    </Callout>
+  </Step>
+  <Step title="Update Package" icon="package">
+    Install the latest version across platforms.
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install duyen-phan-docs@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```yarn
+        yarn add duyen-phan-docs@latest
+        ```
+      </Tab>
+      <Tab title="pnpm" icon="package">
+        ```bash
+        pnpm add duyen-phan-docs@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Rebuild and Deploy" icon="rocket">
+    Run the build command and deploy.
+
+    ```bash
+    npm run build
+    npm run deploy
+    ```
+  </Step>
+</Steps>
+
+## Feature Highlights
+
+Discover key enhancements through these navigable cards.
+
+<Columns cols={3}>
+  <Card title="Custom Theming" icon="palette" href="/docs/theming">
+    Apply your brand color like `#3B82F6` effortlessly.
+  </Card>
+  <Card title="Advanced Components" icon="components" href="/docs/components">
+    Use Steps, Tabs, and Update for richer docs.
+  </Card>
+  <Card title="Error-Free MDX" icon="shield-check">
+    Strict parsing rules prevent common JSX pitfalls.
+  </Card>
+</Columns>
+
+## Upcoming Changes
+
+<Expandable title="Preview v1.4.0 Features" default-open="false">
+
+You anticipate these additions in the next release:
+
+- Native support for Video and Iframe components with better accessibility.
+- AI-assisted MDX validation to catch parsing errors pre-build.
+
+<CodeGroup tabs="JavaScript,TypeScript">
+```javascript
+// Example: New video embed
+const videoConfig = {
+  src: "https://example.com/video.mp4",
+  controls: true
+};
+```
+```typescript
+// Typed config
+interface VideoConfig {
+  src: string;
+  controls: boolean;
+}
+```
+</CodeGroup>
+
+</Expandable>
+
+<Callout kind="info">
+Subscribe to the RSS feed or GitHub releases to get notified of new versions. Check your config for `{notifyOnUpdate}` settings.
+</Callout>

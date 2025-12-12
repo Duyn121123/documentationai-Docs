@@ -1,0 +1,153 @@
+---
+title: Getting Started with Duyên Phan
+description: A step-by-step guide to set up your first documentation project and begin organizing content quickly.
+---
+
+## Overview
+
+Get started with Duyên Phan Documentation in minutes. This guide walks you through account creation, logging in, setting up a new documentation space, uploading your initial content, and basic navigation. You will have a fully functional docs site ready for your project.
+
+<Callout kind="info">
+Duyên Phan supports MDX for interactive documentation with components like Steps, Tabs, and Cards.
+</Callout>
+
+## Prerequisites
+
+Before you begin, ensure you have:
+- A modern web browser like Chrome or Firefox
+- Your MDX files or markdown content prepared
+- An email address for account verification
+
+## Step-by-Step Setup
+
+Follow these steps to launch your first documentation space.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+
+    Navigate to `https://app.duyenphan.com/signup`.
+
+    1. Enter your email address.
+    2. Choose a strong password.
+    3. Complete the CAPTCHA if prompted.
+    4. Check your inbox and click the verification link.
+
+  </Step>
+
+  <Step title="Log In" icon="log-in">
+
+    Go to `https://app.duyenphan.com/login`.
+
+    Enter your verified email and password.
+
+    You land on the dashboard.
+
+  </Step>
+
+  <Step title="Create New Space" icon="plus">
+
+    From the dashboard, click the `New Space` button.
+
+    Enter a name like `My Project Docs`.
+
+    Select `Public` or `Private` visibility.
+
+    Click `Create` to generate your space.
+
+  </Step>
+
+  <Step title="Upload Initial Content" icon="upload">
+
+    In your new space, use the `Upload Files` drag-and-drop area.
+
+    Add these starter files:
+
+    <CodeGroup tabs="index.mdx,quickstart.mdx">
+
+    ````mdx
+    ---
+    title: Welcome to My Docs
+    description: Your project documentation home.
+    ---
+    
+    ## Introduction
+    
+    Start documenting your project here.
+    ````
+
+    ````mdx
+    ---
+    title: Quickstart
+    ---
+    
+    Follow the steps to get running.
+    ````
+
+    </CodeGroup>
+
+    Duyên Phan auto-processes MDX files.
+
+  </Step>
+
+  <Step title="Navigate and Edit" icon="edit-3">
+
+    Use the left sidebar for page navigation.
+
+    Click the pencil icon on any page to enter edit mode.
+
+    <Tabs>
+      <Tab title="Edit Mode" icon="edit">
+
+        Make changes directly in the MDX editor.
+
+        Preview renders live with components.
+
+      </Tab>
+
+      <Tab title="Preview Mode" icon="eye">
+
+        Toggle to full preview.
+
+        Test interactive elements like Tabs and Steps.
+
+      </Tab>
+    </Tabs>
+
+    Save with `Ctrl+S` (`Cmd+S` on macOS).
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore these features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Customize Themes" icon="palette" href="/docs/themes">
+    Apply brand colors like `#3B82F6` and custom layouts.
+  </Card>
+
+  <Card title="Add Search" icon="search" href="/docs/search">
+    Enable full-text search across your docs.
+  </Card>
+
+  <Card title="Version Control" icon="git-branch" href="/docs/git">
+    Connect to GitHub for collaborative editing.
+  </Card>
+</Columns>
+
+<Expandable title="Common Troubleshooting" default-open="false">
+
+If uploads fail:
+
+- Check file size (`<10MB`)
+- Ensure valid MDX syntax
+- Verify space storage quota
+
+For login issues, reset password via email link.
+
+</Expandable>
+
+<Callout kind="tip">
+Use `{title}` and `{description}` in frontmatter for better SEO and navigation.
+</Callout>
